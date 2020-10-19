@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-  <Module Name="PageModule" Url="Pages">
+  <Module Name="PageModule" Url="SitePages">
     <File Path="PageModule\Emp.aspx" Url="Emp.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="TRUE" ReplaceContent="TRUE" Level="Published">
       <!-- Zoneid match with aspx file -->
       <AllUsersWebPart WebPartOrder ="0" WebPartZoneID ="EmpTimeWP">

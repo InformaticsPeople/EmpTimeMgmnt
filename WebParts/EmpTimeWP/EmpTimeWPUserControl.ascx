@@ -23,47 +23,41 @@
         </div>
         <div class="col-md-10 register-right">
             <!-- Main Section -->
-           
+             <asp:Label runat="server" class="text-secondary" ID="lblResult"> </asp:Label>
             <div class="row register-form">
                 <div class="col-md-12">
                     <div class="form-group">
                         <label class="text-secondary col-md-3" for="txtUserTitle">Cretaed By </label>
-                        <input type="text" id="txtUserTitle" runat="server" class="form-control col-md-6" disabled="" name="txtUserTitle">
+                        <asp:TextBox ID="txtcreatedBy" CssClass="form-control col-md-6" runat="server"></asp:TextBox>                       
                     </div>
                     <div class="form-group">
                         <label class="text-secondary" for="txtDate">Cretaed Date </label>
-                        <input type="text" id="txtDate" runat="server" name="txtdate" class="form-control col-md-6" disabled="">
+                         <asp:TextBox ID="txtDate" CssClass="form-control col-md-6" runat="server"></asp:TextBox> 
                     </div>
                     <div class="form-group">
                         <label class="text-secondary" for="txtTitle">Title</label>
-                        <asp:TextBox  id="txtTitle" class="form-control col-md-8" runat="server" name="fullName" placeholder="title.."></asp:TextBox>
-                    </div>
-                     <div class="form-group">
-                        <label class="text-secondary" for="ddlcategory">Category </label>
-                        <asp:DropDownList ID="ddlcategory" class="form-control col-md-8" runat="server">
-                          
-                        </asp:DropDownList>
-                    </div>
-                    <div class="form-group">
-                        <label class="text-secondary" for="ddlTime">Time </label>
-                        <asp:DropDownList ID="ddlTime" class="form-control col-md-6" runat="server"></asp:DropDownList>
+                        <asp:TextBox  id="txtTitle" CssClass="form-control" runat="server"></asp:TextBox>
                     </div>
                     <div class="form-group">
                         <label class="text-secondary" for="txtDescription">Description <span style="color: orangered">*</span></label>
-                          <asp:TextBox  id="txtDescription" class="form-control" TextMode="MultiLine" runat="server" name="fullName" placeholder="title.."></asp:TextBox>                      
+                         <asp:TextBox  id="txtDescription" CssClass="form-control" TextMode="MultiLine" runat="server"></asp:TextBox>                      
                     </div>
-                   
+                    <div class="form-group">
+                        <label class="text-secondary" for="ddlcategory">Category </label>
+                        <asp:DropDownList ID="ddlcategory" CssClass="form-control" runat="server"></asp:DropDownList>
+                    </div>
+                    <div class="form-group">
+                        <label class="text-secondary" for="ddlTime">Time </label>
+                        <asp:DropDownList ID="ddlTime" class="form-control" runat="server"></asp:DropDownList>
+                    </div>
                     <div class="form-group right">
-                        <asp:Button ID="btnSubmit" class="btn btn-primary" Text="Submit" runat="server" OnClick="btnSubmit_Click" />
+                        <asp:Button ID="btnSubmit" CssClass="btn btn-primary" Text="Submit" runat="server" OnClick="btnSubmit_Click" />
                         <asp:Button ID="btnDeleteListItem" runat="server" Text="Delete List Item" OnClick="btnDeleteListItem_Click" />
                     </div>
                 </div>
                  <!-- Bind Section -->
-              
-                  <div class="form-group">
-                      <asp:Label runat="server" class="text-secondary" ID="lblResult"> </asp:Label>
-                <asp:GridView ID="gvListData" CssClass="table table-striped" runat="server"></asp:GridView>
-                </div>            
+                <div class="col-md-12">
+                <asp:GridView ID="gvListData" CssClass="table table-striped" runat="server"></asp:GridView>  </div>            
             </div>
         </div>
        

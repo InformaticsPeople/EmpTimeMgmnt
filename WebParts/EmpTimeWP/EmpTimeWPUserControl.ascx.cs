@@ -13,7 +13,6 @@ namespace EmpTimeMgmnt.WebParts.EmpTimeWP
 {
     public partial class EmpTimeWPUserControl : UserControl
     {
-        ObjectDataSource gridDS = null;
         /// <summary>
         /// n the Page_Load event we are declaring the GridView Object, its event and Datasource
         /// </summary>
@@ -42,17 +41,12 @@ namespace EmpTimeMgmnt.WebParts.EmpTimeWP
         }
         public void BinData()
         {
-
-            DataTable dt1 = new DataTable();
-            dt1.Columns.Add("Category", typeof(string));
-            dt1.Columns.Add("ID", typeof(string));
             DataTable dtdata = new DataTable();
             dtdata.Columns.Add("ID", typeof(int));
             dtdata.Columns.Add("Title", typeof(string));
             dtdata.Columns.Add("Description", typeof(string));
             dtdata.Columns.Add("Category", typeof(string));
             dtdata.Columns.Add("Created", typeof(string));
-            SPFieldMultiChoiceValue choices = new SPFieldMultiChoiceValue();
             using (SPSite objSPSite = new SPSite(SPContext.Current.Web.Url))
             {
                 using (SPWeb objSPWeb = objSPSite.OpenWeb())
@@ -61,22 +55,11 @@ namespace EmpTimeMgmnt.WebParts.EmpTimeWP
                     SPListItemCollection listItems = objSPList.GetItems();
                     foreach (SPItem item in listItems)
                     {
-
-                        //choices = new SPFieldMultiChoiceValue(item["Category"].ToString());
-                        //for (int i = 0; i < choices.Count; i++)
-                        //{
-                        //    dt1.Rows.Add(choices[i], choices[i]);
-                        //}
-                        //ddlcategory.Items.Clear();
-                        //ddlcategory.DataSource = dt1;
-                        //ddlcategory.DataTextField = "Category";
-                        //ddlcategory.DataValueField = "Category";
-                        //ddlcategory.DataBind();
                         DataRow dr = dtdata.NewRow();
                         dr["ID"] = Convert.ToInt16(item["ID"]);
                         dr["Title"] = item["Title"].ToString();
                         dr["Description"] = item["Description"].ToString();
-                        dr["Category"] = item["Category"].ToString();
+                        dr["Category"] = item["Category"].ToString();                      
                         dtdata.Rows.Add(dr);
                     }
                     gvListData.DataSource = dtdata;
