@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="PageModule" Url="Pages">
+    <File Path="PageModule\Emp.aspx" Url="Emp.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="TRUE" ReplaceContent="TRUE" Level="Published">
+      <!-- Zoneid match with aspx file -->
+      <AllUsersWebPart WebPartOrder ="0" WebPartZoneID ="EmpTimeWP">
+        <![CDATA[
+    <?xml version="1.0" encoding="utf-8"?>
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="EmpTimeMgmnt.WebParts.EmpTimeWP.EmpTimeWP, $SharePoint.Project.AssemblyFullName$" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">Emp Time Management - EmpTimeWP</property>
+        <property name="Description" type="string">Cygnet webpart</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>
+        ]]>
+      </AllUsersWebPart>
+    </File>
+  </Module>
+</Elements>

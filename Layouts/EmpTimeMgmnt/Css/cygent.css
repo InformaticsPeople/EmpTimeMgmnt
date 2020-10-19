@@ -1,0 +1,318 @@
+﻿div.right {
+    position: absolute;
+    right: 10px;
+}
+
+.ms-rtestate-field h3, h3.ms-rteElement-H3 {
+    line-height: 1.2 !important;
+}
+
+.checkbox, .radio {
+    position: relative;
+    display: initial !important;
+    margin-top: 10px;
+    margin-left: 25px !important;
+    margin-bottom: 0px !important;
+    color: darkslateblue !important;
+}
+
+.text-secondary {
+    color: darkblue !important;
+}
+
+.redColor {
+    color: red;
+    font-size: 14px;
+    padding: 5px;
+}
+
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+    display: none !important;
+}
+
+h4 {
+    font-weight: bold;
+    margin-bottom: 2.5rem;
+}
+
+.form-wrapper {
+    background: #fff;
+    border-radius: 5px;
+    padding: 50px;
+}
+
+.form-control, .custom-select {
+    border-radius: 0px;
+    color: #495057;
+    background-color: #f1f1f1;
+    border-color: none;
+}
+
+    .form-control:focus {
+        color: #495057;
+        background-color: #ffffff;
+        border: 1px solid #b5b6b3;
+        outline: 0;
+        box-shadow: none;
+    }
+
+.btn {
+    background: #3494E6;
+    border: #3494E6;
+    padding: 0.6rem 3rem;
+    font-weight: bold;
+}
+
+    .btn:hover, .btn:focus, .btn:active, .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
+        background: #3494E6;
+        border: #3494E6;
+        outline: 0;
+    }
+
+.register {
+    background: -webkit-linear-gradient(left, #FFA500, #00c6ff);
+    margin-top: 3%;
+    padding: 3%;
+}
+
+.register-left {
+    text-align: center;
+    color: #fff;
+    margin-top: 4%;
+}
+
+    .register-left input {
+        border: none;
+        border-radius: 1.5rem;
+        padding: 2%;
+        width: 60%;
+        background: #f8f9fa;
+        font-weight: bold;
+        color: #383d41;
+        margin-top: 30%;
+        margin-bottom: 3%;
+        cursor: pointer;
+    }
+
+.register-right {
+    background: #fff;
+    border-top-left-radius: 7% 60%;
+    border-bottom-left-radius: 7% 60%;
+}
+
+.register-left img {
+    width: 50%;
+    /*-webkit-animation: mover 2s infinite alternate;
+            animation: mover 1s infinite alternate;*/
+}
+
+@-webkit-keyframes mover {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes mover {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
+.register-left p {
+    font-weight: lighter;
+    padding: 12%;
+    margin-top: -9%;
+}
+
+.register .register-form {
+    padding: 6%;
+    margin-top: auto;
+  
+}
+
+.btnRegister {
+    float: right;
+    margin-top: 10%;
+    border: none;
+    border-radius: 1.5rem;
+    padding: 2%;
+    background: #0062cc;
+    color: #fff;
+    font-weight: 600;
+    width: 50%;
+    cursor: pointer;
+}
+
+.register .nav-tabs {
+    margin-top: 3%;
+    border: none;
+    background: #0062cc;
+    border-radius: 1.5rem;
+    width: 28%;
+    float: right;
+}
+
+    .register .nav-tabs .nav-link {
+        padding: 2%;
+        height: 34px;
+        font-weight: 600;
+        color: #fff;
+        border-top-right-radius: 1.5rem;
+        border-bottom-right-radius: 1.5rem;
+    }
+
+        .register .nav-tabs .nav-link:hover {
+            border: none;
+        }
+
+        .register .nav-tabs .nav-link.active {
+            width: 100px;
+            color: #0062cc;
+            border: 2px solid #0062cc;
+            border-top-left-radius: 1.5rem;
+            border-bottom-left-radius: 1.5rem;
+        }
+
+.register-heading {
+    text-align: center;
+    margin-top: 8%;
+    margin-bottom: -15%;
+    color: #495057;
+    padding-top: 20px;
+}
+
+html {
+    font-size: 17px !important;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.form-group label {
+    vertical-align: text-bottom !important;
+}
+
+.checkbox, .radio {
+    position: relative;
+    display: initial !important;
+    margin-top: 10px;
+    margin-left: 25px !important;
+    margin-bottom: 0px !important;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font: 16px Arial;
+}
+
+/*the container must be positioned relative:*/
+.autocomplete {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+input {
+    border: 1px solid transparent;
+    background-color: #f1f1f1;
+    padding: 10px;
+    font-size: 16px;
+}
+
+    input[type=text] {
+        background-color: #f1f1f1;
+        width: 100%;
+    }
+
+    input[type=submit] {
+        background-color: DodgerBlue;
+        color: #fff;
+        cursor: pointer;
+    }
+
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    /*position the autocomplete items to be the same width as the container:*/
+    top: 100%;
+    left: 0;
+    right: 0;
+}
+
+    .autocomplete-items div {
+        padding: 10px;
+        cursor: pointer;
+        background-color: #fff;
+        border-bottom: 1px solid #d4d4d4;
+    }
+
+        /*when hovering an item:*/
+        .autocomplete-items div:hover {
+            background-color: #e9e9e9;
+        }
+
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+    background-color: DodgerBlue !important;
+    color: #ffffff;
+}
+
+/* master css after the columns */
+@media (min-width: 768px) {
+    .menu-wrapper {
+        margin-top: 75px;
+    }
+}
+/*cps*/
+.navbar-default {
+    background-color: #fff !important;
+}
+/*Hide sharePoint text for left top menu*/
+.o365cs-nav-leftAlign {
+    display: none !important;
+}
+/* hide right side ? mark*/
+#O365_MainLink_Help {
+    display: none !important;
+}
+
+#s4-bodyContainer {
+    padding-bottom: 0px !important;
+}
+
+.ms-dlgTitle {
+    display: none !important;
+}
+
+#s4-ribbonrow,
+#suiteBarTop {
+    /*display: none !important;*/
+}
+
+#sideNavBox,
+#s4-titlerow {
+    display: none !important;
+}
+
+#contentBox {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+    min-width: 0px !important;
+}
+
+#main {
+    transition: margin-right .5s;
+    margin-top: -50px;
+}

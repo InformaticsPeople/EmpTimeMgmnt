@@ -1,0 +1,113 @@
+﻿<Project ToolsVersion="16.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CDA680C1-C6E7-4BB6-B72D-4B2ACAACC777}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EmpTimeMgmnt</RootNamespace>
+    <AssemblyName>EmpTimeMgmnt</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetOfficeVersion>16.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
+    <MinimumOfficeToolsVersion>14.0</MinimumOfficeToolsVersion>
+    <SandboxedSolution>False</SandboxedSolution>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebParts\EmpTimeWP\EmpTimeWP.cs" />
+    <Compile Include="WebParts\EmpTimeWP\EmpTimeWPUserControl.ascx.cs">
+      <DependentUpon>EmpTimeWPUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebParts\EmpTimeWP\EmpTimeWPUserControl.ascx.designer.cs">
+      <DependentUpon>EmpTimeWPUserControl.ascx.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Features\EmpWebPatFeature\EmpWebPatFeature.feature">
+      <FeatureId>{85f41a44-7bd2-4d5a-bebe-e40d8475b72d}</FeatureId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="Layouts\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{45e4718b-bbaf-4604-8bce-2390a4eb8edb}</SharePointProjectItemId>
+    </None>
+    <None Include="Package\Package.package">
+      <PackageId>{e9ca9380-fdd4-4f15-bc17-eeed0d1c86e5}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+    <None Include="PageModule\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{46ab6a6e-fb6d-42c6-a6ba-e57db2bd786d}</SharePointProjectItemId>
+    </None>
+    <None Include="WebParts\EmpTimeWP\EmpTimeWP.webpart" />
+    <None Include="WebParts\EmpTimeWP\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{658b7d50-d11b-4860-96de-35b14f7aaa6e}</SharePointProjectItemId>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Features\EmpWebPatFeature\EmpWebPatFeature.Template.xml">
+      <DependentUpon>EmpWebPatFeature.feature</DependentUpon>
+    </Content>
+    <Content Include="Layouts\EmpTimeMgmnt\Css\bootstrap.min.css" />
+    <Content Include="Layouts\EmpTimeMgmnt\Css\cygent.css" />
+    <Content Include="Layouts\EmpTimeMgmnt\Images\logo.JPG" />
+    <Content Include="Layouts\EmpTimeMgmnt\Images\logo.png" />
+    <Content Include="Layouts\EmpTimeMgmnt\Scripts\jquery-3.3.1.js" />
+    <Content Include="Layouts\EmpTimeMgmnt\Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Layouts\EmpTimeMgmnt\Scripts\jquery-ui.min.js" />
+    <Content Include="Layouts\EmpTimeMgmnt\Scripts\loadingoverlay.min.js" />
+    <Content Include="PageModule\Elements.xml" />
+    <Content Include="PageModule\Emp.aspx" />
+    <Content Include="WebParts\EmpTimeWP\Elements.xml" />
+    <Content Include="WebParts\EmpTimeWP\EmpTimeWPUserControl.ascx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>
