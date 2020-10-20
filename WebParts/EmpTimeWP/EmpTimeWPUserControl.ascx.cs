@@ -25,6 +25,8 @@ namespace EmpTimeMgmnt.WebParts.EmpTimeWP
             {
                 if (!Page.IsPostBack)
                 {
+                    txtcreatedBy.Text = SPContext.Current.Web.CurrentUser.Name;
+                    txtDate.Text = DateTime.Now.ToString("dd/MM/yyy");
                     BinData();
                 }
               
@@ -55,11 +57,29 @@ namespace EmpTimeMgmnt.WebParts.EmpTimeWP
                     SPListItemCollection listItems = objSPList.GetItems();
                     foreach (SPItem item in listItems)
                     {
+                        DataTable dt1 = new DataTable();
+                        SPFieldMultiChoiceValue choices = new SPFieldMultiChoiceValue();
+                        SPQuery oQuery = new SPQuery();
+                        dt1.Columns.Add("CategoryName", typeof(string));
+                        dt1.Columns.Add("CategoryValue", typeof(string));
+                        
+                            choices = new SPFieldMultiChoiceValue(Convert.ToString(item["Category"]));
+                        
+                        for (int i = 0; i < choices.Count; i++)
+                        {
+                            dt1.Rows.Add(choices[i], choices[i]);
+                        }
+                        ddlcategory.Items.Clear();
+                        ddlcategory.DataSource = dt1;
+                        ddlcategory.DataTextField = "CategoryName";
+                        ddlcategory.DataValueField = "CategoryValue";
+                        ddlcategory.DataBind();
+                        //grid
                         DataRow dr = dtdata.NewRow();
                         dr["ID"] = Convert.ToInt16(item["ID"]);
-                        dr["Title"] = item["Title"].ToString();
-                        dr["Description"] = item["Description"].ToString();
-                        dr["Category"] = item["Category"].ToString();                      
+                        dr["Title"] = Convert.ToString(item["Title"]);
+                        dr["Description"] = Convert.ToString(item["Description"]);
+                        dr["Category"] = Convert.ToString(item["Category"]);                      
                         dtdata.Rows.Add(dr);
                     }
                     gvListData.DataSource = dtdata;
@@ -104,8 +124,8 @@ namespace EmpTimeMgmnt.WebParts.EmpTimeWP
                     {
                         objSPWeb.AllowUnsafeUpdates = true;
                         SPListItem objSPListItem = objSPList.Items.Add();
-                        objSPListItem["Title"] = Convert.ToString(txtTitle.Text.Trim());
-                        objSPListItem["Description"] = Convert.ToString(txtDescription.Text.Trim());
+                        objSPListItem["Title"] = Convert.ToString(txtTitle.Text);
+                        objSPListItem["Description"] = Convert.ToString(txtDescription.Text);
                         objSPListItem["Category"] = Convert.ToString(ddlcategory.SelectedItem.Text);                      
                         objSPListItem.Update();
                         lblResult.Text = "Submitted successfully.";

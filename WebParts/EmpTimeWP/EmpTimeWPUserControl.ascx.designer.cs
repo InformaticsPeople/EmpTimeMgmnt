@@ -15,15 +15,6 @@ namespace EmpTimeMgmnt.WebParts.EmpTimeWP
     {
 
         /// <summary>
-        /// lblResult control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblResult;
-
-        /// <summary>
         /// txtcreatedBy control.
         /// </summary>
         /// <remarks>
@@ -51,6 +42,15 @@ namespace EmpTimeMgmnt.WebParts.EmpTimeWP
         protected global::System.Web.UI.WebControls.TextBox txtTitle;
 
         /// <summary>
+        /// reqName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqName;
+
+        /// <summary>
         /// txtDescription control.
         /// </summary>
         /// <remarks>
@@ -58,6 +58,15 @@ namespace EmpTimeMgmnt.WebParts.EmpTimeWP
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDescription;
+
+        /// <summary>
+        /// reqdesc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqdesc;
 
         /// <summary>
         /// ddlcategory control.
@@ -94,6 +103,15 @@ namespace EmpTimeMgmnt.WebParts.EmpTimeWP
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnDeleteListItem;
+
+        /// <summary>
+        /// lblResult control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblResult;
 
         /// <summary>
         /// gvListData control.

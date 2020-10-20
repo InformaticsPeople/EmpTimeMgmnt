@@ -23,7 +23,7 @@
         </div>
         <div class="col-md-10 register-right">
             <!-- Main Section -->
-             <asp:Label runat="server" class="text-secondary" ID="lblResult"> </asp:Label>
+            
             <div class="row register-form">
                 <div class="col-md-12">
                     <div class="form-group">
@@ -37,10 +37,12 @@
                     <div class="form-group">
                         <label class="text-secondary" for="txtTitle">Title</label>
                         <asp:TextBox  id="txtTitle" CssClass="form-control" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator runat="server" id="reqName" controltovalidate="txtTitle" errormessage=" Title is required!" />
                     </div>
                     <div class="form-group">
                         <label class="text-secondary" for="txtDescription">Description <span style="color: orangered">*</span></label>
-                         <asp:TextBox  id="txtDescription" CssClass="form-control" TextMode="MultiLine" runat="server"></asp:TextBox>                      
+                         <asp:TextBox  id="txtDescription" CssClass="form-control" TextMode="MultiLine" runat="server"></asp:TextBox>  
+                        <asp:RequiredFieldValidator runat="server" id="reqdesc" controltovalidate="txtDescription" errormessage=" Title is required!" />
                     </div>
                     <div class="form-group">
                         <label class="text-secondary" for="ddlcategory">Category </label>
@@ -50,13 +52,14 @@
                         <label class="text-secondary" for="ddlTime">Time </label>
                         <asp:DropDownList ID="ddlTime" class="form-control" runat="server"></asp:DropDownList>
                     </div>
-                    <div class="form-group right">
+                    <div class="form-group right">                      
                         <asp:Button ID="btnSubmit" CssClass="btn btn-primary" Text="Submit" runat="server" OnClick="btnSubmit_Click" />
-                        <asp:Button ID="btnDeleteListItem" runat="server" Text="Delete List Item" OnClick="btnDeleteListItem_Click" />
+                        <asp:Button ID="btnDeleteListItem" runat="server" Text="Delete" OnClick="btnDeleteListItem_Click" />
                     </div>
                 </div>
                  <!-- Bind Section -->
-                <div class="col-md-12">
+                <div style="padding-top:40px;" class="col-md-12">
+                     <asp:Label runat="server" class="text-secondary" ID="lblResult"> </asp:Label>
                 <asp:GridView ID="gvListData" CssClass="table table-striped" runat="server"></asp:GridView>  </div>            
             </div>
         </div>
